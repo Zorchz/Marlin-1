@@ -132,7 +132,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghost4"
+#define CUSTOM_MACHINE_NAME "Ghost4_2"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -492,9 +492,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 16.20
-    #define DEFAULT_Ki 1.16
-    #define DEFAULT_Kd 56.72
+    #define DEFAULT_Kp 12.28
+    #define DEFAULT_Ki   0.82
+    #define DEFAULT_Kd 45.88
   #endif
 #endif // PIDTEMP
 
@@ -533,9 +533,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-#define DEFAULT_bedKp 72.43
-#define DEFAULT_bedKi 14.47
-#define DEFAULT_bedKd 241.68
+  #define DEFAULT_bedKp 42.98
+  #define DEFAULT_bedKi 7.92
+  #define DEFAULT_bedKd 155.60
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -736,14 +736,14 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 640.9,644,806,827 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 161.4, 160.8, 201.3, 97.9 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 120, 120, 10, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -756,7 +756,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 200, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 200, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -991,7 +991,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 21, -1.02  }  //more minus close to bed 
+#define NOZZLE_TO_PROBE_OFFSET { 37.197, -20.358, -0.3 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1161,9 +1161,9 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 243
+#define X_BED_SIZE 247
 
-#define Y_BED_SIZE 200
+#define Y_BED_SIZE 195
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 1
